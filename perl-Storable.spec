@@ -4,13 +4,13 @@
 #
 Name     : perl-Storable
 Version  : 3.15
-Release  : 2
+Release  : 3
 URL      : https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.15.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.15.tar.gz
 Summary  : 'persistence for Perl data structures'
 Group    : Development/Tools
 License  : Artistic-1.0-Perl
-Requires: perl-Storable-lib = %{version}-%{release}
+Requires: perl-Storable-perl = %{version}-%{release}
 BuildRequires : buildreq-cpan
 
 %description
@@ -22,7 +22,6 @@ it under the same terms as Perl 5 itself.
 %package dev
 Summary: dev components for the perl-Storable package.
 Group: Development
-Requires: perl-Storable-lib = %{version}-%{release}
 Provides: perl-Storable-devel = %{version}-%{release}
 Requires: perl-Storable = %{version}-%{release}
 
@@ -30,16 +29,18 @@ Requires: perl-Storable = %{version}-%{release}
 dev components for the perl-Storable package.
 
 
-%package lib
-Summary: lib components for the perl-Storable package.
-Group: Libraries
+%package perl
+Summary: perl components for the perl-Storable package.
+Group: Default
+Requires: perl-Storable = %{version}-%{release}
 
-%description lib
-lib components for the perl-Storable package.
+%description perl
+perl components for the perl-Storable package.
 
 
 %prep
 %setup -q -n Storable-3.15
+cd %{_builddir}/Storable-3.15
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -75,12 +76,12 @@ find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 
 %files
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/Storable.pm
 
 %files dev
 %defattr(-,root,root,-)
 /usr/share/man/man3/Storable.3
 
-%files lib
+%files perl
 %defattr(-,root,root,-)
-/usr/lib/perl5/vendor_perl/5.28.2/x86_64-linux-thread-multi/auto/Storable/Storable.so
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/Storable.pm
+/usr/lib/perl5/vendor_perl/5.30.1/x86_64-linux-thread-multi/auto/Storable/Storable.so
