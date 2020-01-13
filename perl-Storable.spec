@@ -4,7 +4,7 @@
 #
 Name     : perl-Storable
 Version  : 3.15
-Release  : 3
+Release  : 4
 URL      : https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.15.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.15.tar.gz
 Summary  : 'persistence for Perl data structures'
@@ -18,16 +18,6 @@ Storable 3.05c
 ------------------------------------------------------------------------
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl 5 itself.
-
-%package dev
-Summary: dev components for the perl-Storable package.
-Group: Development
-Provides: perl-Storable-devel = %{version}-%{release}
-Requires: perl-Storable = %{version}-%{release}
-
-%description dev
-dev components for the perl-Storable package.
-
 
 %package perl
 Summary: perl components for the perl-Storable package.
@@ -73,13 +63,11 @@ find %{buildroot} -type f -name .packlist -exec rm -f {} ';'
 find %{buildroot} -depth -type d -exec rmdir {} 2>/dev/null ';'
 find %{buildroot} -type f -name '*.bs' -empty -exec rm -f {} ';'
 %{_fixperms} %{buildroot}/*
+## Remove excluded files
+rm -f %{buildroot}/usr/share/man/man3/Storable.3
 
 %files
 %defattr(-,root,root,-)
-
-%files dev
-%defattr(-,root,root,-)
-/usr/share/man/man3/Storable.3
 
 %files perl
 %defattr(-,root,root,-)
