@@ -4,7 +4,7 @@
 #
 Name     : perl-Storable
 Version  : 3.15
-Release  : 8
+Release  : 9
 URL      : https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.15.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/X/XS/XSAWYERX/Storable-3.15.tar.gz
 Summary  : 'persistence for Perl data structures'
