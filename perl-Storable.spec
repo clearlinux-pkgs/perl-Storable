@@ -5,7 +5,7 @@
 #
 Name     : perl-Storable
 Version  : 3.25
-Release  : 18
+Release  : 19
 URL      : https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/Storable-3.25.tar.gz
 Source0  : https://cpan.metacpan.org/authors/id/N/NW/NWCLARK/Storable-3.25.tar.gz
 Summary  : 'persistence for Perl data structures'
